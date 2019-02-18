@@ -47,7 +47,7 @@
                 android:text="@string/length" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/lengthEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -69,7 +69,7 @@
                 android:text="@string/width" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/widthEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,7 +91,7 @@
                 android:text="@string/height" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/heightEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -102,6 +102,7 @@
     </TableLayout>
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="311dp"
         android:layout_height="309dp"
         android:layout_marginStart="8dp"
@@ -117,7 +118,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView6"
@@ -130,7 +131,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView7"
@@ -138,13 +139,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="@string/doors" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/doorsEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number" />
@@ -152,7 +153,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView8"
@@ -160,21 +161,36 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="@string/windows" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/windowsEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:ems="10"
-                android:inputType="number"
-                android:gravity="center" />
+                android:gravity="center"
+                android:inputType="number" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/computeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/compute_button_text" />
+
+            <Button
+                android:id="@+id/helpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:text="@string/help_button_text" />
+        </TableRow>
     </TableLayout>
 
     <TextView
@@ -194,4 +210,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011" />
+
+    <TextView
+        android:id="@+id/interiorSurfaceAreaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943" />
+
 </android.support.constraint.ConstraintLayout>
