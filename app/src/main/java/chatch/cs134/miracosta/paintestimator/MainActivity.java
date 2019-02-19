@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 import chatch.cs134.miracosta.paintestimator.Model.InteriorRoom;
 
 public class MainActivity extends AppCompatActivity
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity
 
     TextView interiorSurfaceAreaTextView;
     InteriorRoom room;
+    //DecimalFormat myFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity
         interiorSurfaceAreaTextView.setText("");
 
         room = new InteriorRoom(0,0,0,0,0);
+        //myFormat = new DecimalFormat("#.#0");
     }
 
     public void computeOnClick(View v)
@@ -54,10 +58,15 @@ public class MainActivity extends AppCompatActivity
         int doors = Integer.parseInt(doorsEditText.getText().toString());
         int windows = Integer.parseInt(windowsEditText.getText().toString());
 
-        room = new InteriorRoom(doors, windows, width, height, length);
+        room.setLength(length);
+        room.setWidth(width);
+        room.setHeight(height);
+        room.setDoors(doors);
+        room.setWindows(windows);
+
 
         // Display interior surface area
-        String textView = "Interior surface area: " + room.totalSurfaceArea();
+        String textView = "Interior surface area: " + room.wallSurfaceArea();
         textView += "\nGallons needed: " + room.gallonsOfPaintRequired();
         interiorSurfaceAreaTextView.setText(textView);
     }

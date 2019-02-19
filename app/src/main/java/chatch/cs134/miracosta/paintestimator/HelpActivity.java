@@ -25,6 +25,10 @@ public class HelpActivity extends AppCompatActivity
         Intent mainIntent = getIntent();
         String gallons = mainIntent.getStringExtra("gallons");
 
+        if(gallons == null)
+        {
+            gallons = "0.0";
+        }
         String newMessage = "Estimated Paint Required: " + gallons + " gallons";
         estimatedPaintTextView.setText(newMessage);
     }
